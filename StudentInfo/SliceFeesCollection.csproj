@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C984F54-936E-4502-9D54-C5FB660986EF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StudentInfo</RootNamespace>
+    <AssemblyName>StudentInfo</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IMG\fav_WIb_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EPPlus, Version=4.5.2.1, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.4.5.2.1\lib\net40\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.140.340.80\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\DAL.cs" />
+    <Compile Include="Data\ExcelImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\ExcelImport.Designer.cs">
+      <DependentUpon>ExcelImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Expensive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\Expensive.Designer.cs">
+      <DependentUpon>Expensive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\FeesDtls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\FeesDtls.Designer.cs">
+      <DependentUpon>FeesDtls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PrintReciept.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\PrintReciept.Designer.cs">
+      <DependentUpon>PrintReciept.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SajakaDtls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\SajakaDtls.Designer.cs">
+      <DependentUpon>SajakaDtls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\SectionMst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\SectionMst.Designer.cs">
+      <DependentUpon>SectionMst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\StandardMst.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\StandardMst.Designer.cs">
+      <DependentUpon>StandardMst.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\StartupScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\StartupScreen.Designer.cs">
+      <DependentUpon>StartupScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\StudentDatabase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentDatabase.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Data\StudentDtls.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\StudentDtls.Designer.cs">
+      <DependentUpon>StudentDtls.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainModule.cs" />
+    <Compile Include="PrinterData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\ExpensiveReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\ExpensiveReport.Designer.cs">
+      <DependentUpon>ExpensiveReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\FeesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\FeesReport.Designer.cs">
+      <DependentUpon>FeesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\SajakaReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\SajakaReport.Designer.cs">
+      <DependentUpon>SajakaReport.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Data\ExcelImport.resx">
+      <DependentUpon>ExcelImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\Expensive.resx">
+      <DependentUpon>Expensive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\FeesDtls.resx">
+      <DependentUpon>FeesDtls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\PrintReciept.resx">
+      <DependentUpon>PrintReciept.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\RptPrintReceipt.rdlc" />
+    <EmbeddedResource Include="Data\SajakaDtls.resx">
+      <DependentUpon>SajakaDtls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\SectionMst.resx">
+      <DependentUpon>SectionMst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\StandardMst.resx">
+      <DependentUpon>StandardMst.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\StartupScreen.resx">
+      <DependentUpon>StartupScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\StudentDtls.resx">
+      <DependentUpon>StudentDtls.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\ExpensiveReport.resx">
+      <DependentUpon>ExpensiveReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\FeesReport.resx">
+      <DependentUpon>FeesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptExp.rdlc" />
+    <EmbeddedResource Include="Reports\RptFees.rdlc" />
+    <EmbeddedResource Include="Reports\RptSajaka.rdlc" />
+    <EmbeddedResource Include="Reports\SajakaReport.resx">
+      <DependentUpon>SajakaReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Data\StudentDatabase.xsc">
+      <DependentUpon>StudentDatabase.xsd</DependentUpon>
+    </None>
+    <None Include="Data\StudentDatabase.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StudentDatabase.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Data\StudentDatabase.xss">
+      <DependentUpon>StudentDatabase.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IMG\BackIMG.jpg" />
+    <Content Include="IMG\DarlBlue.jpg" />
+    <Content Include="IMG\fav_WIb_icon.ico" />
+    <Content Include="IMG\fees.png" />
+    <Content Include="IMG\studicon_hYe_icon.ico" />
+    <Content Include="StudentInfo.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="StudentInfo_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>StudentInfo.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
