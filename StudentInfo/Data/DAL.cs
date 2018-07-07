@@ -10,7 +10,8 @@ namespace StudentInfo.Data
 {
     class DAL
     {
-      public  SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StudentInfoConnectionString"].ConnectionString);
+
+		public  SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["StudentInfoConnectionString"].ConnectionString);
     }
    
 }
